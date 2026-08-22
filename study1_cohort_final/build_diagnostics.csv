@@ -1,0 +1,10 @@
+﻿metric,value
+panel_rows,181957.0
+panel_unique_targets,55622.0
+gs_unique_targets,57284.0
+panel_targets_with_gs_record,55622.0
+gs_coverage_rate,1.0
+D_main_rows,181957.0
+D_main_unique_targets,55622.0
+A_indexed_rows,56949.0
+A_indexed_unique_targets,19436.0

@@ -1,0 +1,20 @@
+STUDY 1 VALIDATION SUMMARY
+
+PASS: 37
+WARN: 0
+FAIL: 0
+
+OVERALL: READY
+
+Main analysis file:
+  study1_cohort_panel_D_main.csv
+
+Access analysis file:
+  study1_cohort_panel_A_indexed_only.csv
+
+Important:
+- C1–C4 cohort structure is preserved.
+- D_j is taken from google_scholar_indexed.
+- A_j is strict verified open full text, conditional on D_j=1.
+- Missing GS collection rows are not recoded as D_j=0.
+- N_topic_jc and ln_offset are intentionally excluded from final analysis files.

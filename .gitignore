@@ -1,0 +1,10 @@
+# Local caches and logs
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+
+# GitHub rejects files larger than 100 MB
+rq2analticsample_with_google_scholar_metadata.csv
+rq2analticsample_with_kci_metadata.csv
+rq2analticsample_with_kci_metadata_unique.csv
