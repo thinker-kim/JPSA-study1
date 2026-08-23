@@ -362,10 +362,19 @@ def validate(base_dir: Path) -> None:
         )
     else:
         mismatch = 0
+        numeric_core = {
+            "target_year", "target_topic", "partial", "eng_cite_count",
+            "Y_jc", "obs_start", "obs_end", "age_jc",
+        }
         for c in core:
-            a = src_core[c].astype("string").fillna("<NA>")
-            b = full_core[c].astype("string").fillna("<NA>")
-            mismatch += int((a != b).sum())
+            if c in numeric_core:
+                a = num(src_core[c]).to_numpy(dtype="float64", na_value=np.nan)
+                b = num(full_core[c]).to_numpy(dtype="float64", na_value=np.nan)
+                mismatch += int((~np.isclose(a, b, rtol=1e-12, atol=1e-12, equal_nan=True)).sum())
+            else:
+                a = src_core[c].astype("string").fillna("<NA>")
+                b = full_core[c].astype("string").fillna("<NA>")
+                mismatch += int((a != b).sum())
         if mismatch == 0:
             rep.passed("panel", "core cohort/Y fields preserved exactly", observed=0)
         else:
@@ -382,8 +391,52 @@ def validate(base_dir: Path) -> None:
     if "google_scholar_indexed" not in gs.columns:
         rep.fail("GS", "google_scholar_indexed exists", observed="missing")
     else:
-        gs_check = gs[[ID, "google_scholar_indexed"]].copy()
+        gs_cols = [ID, "google_scholar_indexed"]
+        if "google_scholar_match_status" in gs.columns:
+            gs_cols.append("google_scholar_match_status")
+        gs_check = gs[gs_cols].copy()
         gs_check["D_expected"] = bin01(gs_check["google_scholar_indexed"])
+
+        if "google_scholar_match_status" in gs_check.columns:
+            match_status = (
+                gs_check["google_scholar_match_status"]
+                .astype("string")
+                .str.strip()
+                .str.lower()
+            )
+            gs_check.loc[match_status.eq("review"), "D_expected"] = 0
+            error_statuses = {
+                "api_error",
+                "processing_error",
+                "missing_search_title",
+            }
+            gs_check.loc[
+                match_status.isin(error_statuses), "D_expected"
+            ] = pd.NA
+
+            bad_review = int(
+                target.loc[
+                    target["google_scholar_match_status"]
+                    .astype("string").str.strip().str.lower().eq("review"),
+                    "D_j",
+                ].ne(0).sum()
+            )
+            bad_error = int(
+                target.loc[
+                    target["google_scholar_match_status"]
+                    .astype("string").str.strip().str.lower()
+                    .isin(error_statuses),
+                    "D_j",
+                ].notna().sum()
+            )
+            if bad_review == 0:
+                rep.passed("GS", "review status coded D_j=0", observed=0)
+            else:
+                rep.fail("GS", "review status coded D_j=0", observed=bad_review, expected=0)
+            if bad_error == 0:
+                rep.passed("GS", "error statuses coded D_j=NA", observed=0)
+            else:
+                rep.fail("GS", "error statuses coded D_j=NA", observed=bad_error, expected=0)
 
         if "google_scholar_open_fulltext" in gs.columns:
             open_raw = bin01(gs["google_scholar_open_fulltext"])

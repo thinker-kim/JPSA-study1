@@ -1,0 +1,13 @@
+﻿metric,value
+missing-year targets,1662.0
+missing-year D=1,199.0
+missing-year D=0,1429.0
+missing-year D error/NA,34.0
+indexed share among determinate missing-year targets,0.12223587223587223
+indexed share among included targets,0.3547427403310884
+publication-year missing rate among D=1,0.010134963076139546
+publication-year missing rate among D=0,0.03885052471317492
+D=0 / D=1 missingness risk ratio,3.8333168479557265
+two-proportion z statistic,19.408034022870652
+year recoverable from enriched metadata,386.0
+year still unavailable,1276.0

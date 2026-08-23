@@ -221,8 +221,24 @@ def build(base_dir: Path) -> None:
         ndup = gs.loc[gs[ID].duplicated(False), ID].nunique()
         raise ValueError(f"{GS_FILE} has duplicated target IDs: {ndup:,}")
 
-    # D_j: exact accepted Scholar match / index presence
+    # D_j: exact-title Scholar lookup result.
+    # Review cases count as not found; technical/search-input failures are
+    # missing because no valid lookup result was obtained.
     gs["D_j"] = bin01(gs["google_scholar_indexed"])
+    if "google_scholar_match_status" in gs.columns:
+        match_status = (
+            gs["google_scholar_match_status"]
+            .astype("string")
+            .str.strip()
+            .str.lower()
+        )
+        gs.loc[match_status.eq("review"), "D_j"] = 0
+        error_statuses = {
+            "api_error",
+            "processing_error",
+            "missing_search_title",
+        }
+        gs.loc[match_status.isin(error_statuses), "D_j"] = pd.NA
 
     # Cross-check accepted-match field if present
     if "google_scholar_match_accepted" in gs.columns:
