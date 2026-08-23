@@ -28,7 +28,7 @@ This paper uses the term **discovery bottleneck** to denote failure of a publica
 
 Research published in languages other than English occupies a smaller share of major international bibliographic databases and generally receives fewer international citations than English-language research (Mongeon and Paul-Hus 2016; Amano, González-Varo, and Sutherland 2016; Di Bitetti and Ferreras 2017). Mongeon and Paul-Hus (2016), for example, show that Web of Science and Scopus overrepresent English-language journals relative to the broader population of scholarly journals. Di Bitetti and Ferreras (2017) find higher citation counts for English-language articles even after controlling for journal, publication year, and article length. Research on evidence synthesis further shows that excluding non-English studies can alter the substantive conclusions of a review because the omitted literature is not necessarily a random subset of the available evidence (Konno et al. 2020).
 
-Korean political science provides a case in which this distinction can be examined directly. Korean-language political science contains a substantial literature that is cited within Korean scholarship but only rarely cited by English-language scholarship. Previous bibliographic analysis of Korean politics identifies a linguistically divided citation structure in which Korean-language scholarship relies substantially on locally accumulated work, while English-language scholarship concentrates citation within a different set of publications (Kim 2025).
+This paper examines that distinction in Korean political science. Study 1 begins with 54,789 Korean-language papers cited within Korean scholarship and tests whether their Google Scholar retrievability is associated with entry into English-language citation.
 
 Publication language is one explanation for this division, but it cannot determine citation unless a potential citer first encounters the paper. An English-language title, English abstract, or machine translation can reduce the linguistic cost of evaluating a Korean-language paper only after that paper has been retrieved. Amano, González-Varo, and Sutherland (2016) make this distinction concrete: among non-English conservation literature they examined, English metadata was often absent, and even papers with English titles were not always retrievable in Google Scholar by those titles.
 
@@ -808,8 +808,6 @@ Introna, Lucas D., and Helen Nissenbaum. 2000. “Shaping the Web: Why the Polit
 Jamali, Hamid R., and Saeid Asadi. 2010. “Google and the Scholar: The Role of Google in Scientists' Information-Seeking Behaviour.” *Online Information Review* 34(2): 282–294. [https://doi.org/10.1108/14684521011036990](https://doi.org/10.1108/14684521011036990).
 
 Kemp, Jennifer. 2018. “Metadata and Discoverability: A Use Case Overview.” *Information Services & Use* 38(1–2): 131–141. [https://doi.org/10.3233/ISU-180004](https://doi.org/10.3233/ISU-180004).
-
-Kim, Hyowon. 2025. *Two Spheres of Korean Politics: Knowledge Production and Dissemination across Linguistic Divides*. Ann Arbor, MI: Inter-university Consortium for Political and Social Research. [https://doi.org/10.3886/E240683V1](https://doi.org/10.3886/E240683V1).
 
 Konno, Ko, Munemitsu Akasaka, Chieko Koshida, Naoki Katayama, Noriyuki Osada, Rebecca Spake, and Tatsuya Amano. 2020. “Ignoring Non-English-Language Studies May Bias Ecological Meta-Analyses.” *Ecology and Evolution* 10(13): 6373–6384. [https://doi.org/10.1002/ece3.6368](https://doi.org/10.1002/ece3.6368).
 

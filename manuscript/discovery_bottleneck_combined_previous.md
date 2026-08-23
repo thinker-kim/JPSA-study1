@@ -22,7 +22,7 @@ Research published in local languages occupies a structurally disadvantaged posi
 
 ## 1. Introduction
 
-Research published in local languages occupies a structurally disadvantaged position in international scholarship (Amano, González-Varo, and Sutherland 2016; Di Bitetti and Ferreras 2017; Mongeon and Paul-Hus 2016). A bibliographic analysis of Korean politics finds a divided citation structure: Korean-language scholarship draws heavily on locally accumulated research, whereas English-language scholarship concentrates recognition within the international literature (Kim 2025). Existing accounts establish the importance of language hierarchy but do not fully explain how scholars encounter candidate literature. A paper absent from a search result or recommendation receives no opportunity to be evaluated, translated, or cited, regardless of its substantive relevance.
+Research published in local languages occupies a structurally disadvantaged position in international scholarship (Amano, González-Varo, and Sutherland 2016; Di Bitetti and Ferreras 2017; Mongeon and Paul-Hus 2016). This paper examines how discovery systems contribute to that inequality in Korean political science. Existing accounts establish the importance of language hierarchy but do not fully explain how scholars encounter candidate literature. A paper absent from a search result or recommendation receives no opportunity to be evaluated, translated, or cited, regardless of its substantive relevance.
 
 This paper calls that constraint the **discovery bottleneck**. It examines the problem in two infrastructures that increasingly organize scholarly discovery. Google Scholar represents established indexed search; web-enabled LLMs represent an emerging interface that retrieves web sources, selects publications, and supplies links in a generated answer.
 
@@ -226,8 +226,6 @@ Céspedes, Lucía, Diego Kozlowski, and Ernesto Priego. 2025. “Evaluating the 
 Di Bitetti, Mario S., and Julián A. Ferreras. 2017. “Publish (in English) or Perish: The Effect on Citation Rate of Using Languages Other than English in Scientific Publications.” *Ambio* 46: 121–127. https://doi.org/10.1007/s13280-016-0820-7.
 
 Kemp, Jennifer. 2018. “Metadata and Discoverability: A Use Case Overview.” *Information Services & Use* 38(3): 131–141. https://doi.org/10.3233/ISU-180004.
-
-Kim, Hyowon. 2025. *Two Spheres of Korean Politics: Knowledge Production and Dissemination across Linguistic Divides*. Ann Arbor, MI: Inter-university Consortium for Political and Social Research. https://doi.org/10.3886/E240683V1.
 
 Konno, Katsuya, et al. 2020. “Ignoring Non-English-Language Studies May Bias Ecological Meta-Analyses.” *Ecology and Evolution* 10(13): 6373–6384. https://doi.org/10.1002/ece3.6368.
 
