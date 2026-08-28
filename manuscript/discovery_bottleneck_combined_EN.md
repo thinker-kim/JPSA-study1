@@ -275,7 +275,7 @@ Under the combined condition, the relative gap reverses, yet Korean benchmark re
 The link audit identifies a separate downstream limitation because fewer than half of recommendations provide immediate full-text access through the URL the system itself supplies. This result concerns the user pathway created by the system, not the publication's availability elsewhere on the web.
 
 
-# 5. Combined Discussion
+# 5. Discussion
 
 ## 5.1 What the two studies jointly show
 
