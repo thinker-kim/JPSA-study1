@@ -20,7 +20,7 @@ Study 2 audits two web-enabled generative search systems using 50 Korean-languag
 
 Together, the studies show that the international visibility of Korean political science should be analyzed not only through publication and citation but also through the processes by which publications are retrieved and selected as final sources. Unlike the search and recommendation results, full-text access shows no corresponding language gap. The paper defines discovery bottleneck as the failure of a publication to enter the search candidate set or survive final source selection before substantive evaluation.
 
-Keywords — Korean political science; scholarly search; Google Scholar; generative search; non-English-language scholarship; international visibility; full-text access; discovery bottleneck
+Keywords: Korean political science; scholarly search; Google Scholar; generative search; non-English-language scholarship; international visibility; full-text access; discovery bottleneck
 
 
 # 1. Introduction
