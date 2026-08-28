@@ -94,10 +94,10 @@ Study 1의 핵심 비교는 한국어권 정치학에서 이미 사용된 한국
 
 영어권 인용은 누적 citation count로 합치지 않고 citation cohort별 incidence로 구성한다. 누적 인용만 사용하면 visible–nonvisible gap의 시간적 변화를 확인할 수 없고, 연도별 outcome은 citation event가 희소하여 추정이 불안정할 수 있다. 이에 영어권 citing paper를 다음 네 기간으로 구분한다.
 
-* C1 — 2009년 이하
-* C2 — 2010–2014
-* C3 — 2015–2019
-* C4 — 2020–2024
+* C1: 2009년 이하
+* C2: 2010–2014
+* C3: 2015–2019
+* C4: 2020–2024
 
 C1은 이후 cohort와의 비교를 위한 기준기간이며 Google Scholar 도입 이전의 검색환경을 의미하지 않는다. 2010년 이후에는 동일한 5년 구간을 사용하여 기간 길이에 따른 차이를 줄인다.
 
@@ -203,9 +203,9 @@ Benchmark topic은 한국어권과 영어권 한국 정치학의 연구지형을
 
 Audit은 다음 세 요인을 교차한다.
 
-* Query language — 영어 / 한국어
-* Source instruction — general web / KCI·DBpia·KISS 명시
-* System — OpenAI `gpt-5.6-sol` / Perplexity `sonar-pro`
+* Query language: 영어 / 한국어
+* Source instruction: general web / KCI·DBpia·KISS 명시
+* System: OpenAI `gpt-5.6-sol` / Perplexity `sonar-pro`
 
 Query language와 source instruction은 단순한 문구상의 차이가 아니라 retrieval에 입력되는 검색조건으로 사용한다. 한국어 질의나 한국 학술 데이터베이스의 명시가 한국어 benchmark의 상대적 recovery를 변화시킨다면, 해당 문헌의 가시성이 단일한 고정값이라기보다 검색이 구성되는 조건에 따라 달라질 수 있음을 의미한다.
 
@@ -215,9 +215,9 @@ Query language와 source instruction은 단순한 문구상의 차이가 아니�
 
 Benchmark paper \(j\)와 execution \(i\)에 대해 세 결과를 구분한다.
 
-* TraceRecovery — provider가 외부에 노출하는 observable search trace에 benchmark paper가 나타나는지
-* Recommendation — benchmark paper가 final recommendation에 포함되는지
-* SuppliedLinkAccess — benchmark가 추천되고 제공된 URL이 로그인이나 결제 없이 full text를 제공하는지
+* TraceRecovery는 provider가 외부에 노출하는 observable search trace에 benchmark paper가 나타나는지를 측정한다.
+* Recommendation은 benchmark paper가 final recommendation에 포함되는지를 측정한다.
+* SuppliedLinkAccess는 benchmark가 추천되고 제공된 URL이 로그인이나 결제 없이 full text를 제공하는지를 측정한다.
 
 앞의 두 지표가 Study 2에서의 검색 가시성을 구성한다. TraceRecovery는 관찰 가능한 검색단계에 진입했는지를, Recommendation은 그 문헌이 최종 source selection을 통과했는지를 측정한다. SuppliedLinkAccess는 이와 구분되는 후속 접근결과이다.
 
@@ -260,12 +260,12 @@ Observable search trace와 final recommendation에서는 통계적으로 유의�
 
 전체 1,932개의 recommendation occurrence 가운데 제공된 링크의 결과는 다음과 같다.
 
-* 854개(44.2%) — full text 접근 가능
-* 859개(44.5%) — 접근 제한
+* 854개(44.2%)는 full text 접근 가능
+* 859개(44.5%)는 접근 제한
 
   * abstract-only 247개
   * paywall 612개
-* 219개(11.3%) — invalid 또는 unverifiable
+* 219개(11.3%)는 invalid 또는 unverifiable
 
   * broken link 176개
   * coded hallucinated publication 43개
@@ -275,8 +275,8 @@ Observable search trace와 final recommendation에서는 통계적으로 유의�
 | Accessible              | 44.2% |  46.3% | 42.4% |
 | Access restricted       | 44.5% |  47.9% | 41.6% |
 | Invalid or unverifiable | 11.3% |   5.8% | 16.0% |
-| — Broken link           |  9.1% |   3.3% | 14.1% |
-| — Hallucinated item     |  2.2% |   2.6% |  1.9% |
+| Broken link             |  9.1% |   3.3% | 14.1% |
+| Hallucinated item       |  2.2% |   2.6% |  1.9% |
 
 Prompt condition과 system을 통제하면 recommended-item language는 full access, access restriction 또는 invalid/unverifiable outcome과 독립적으로 유의한 관계를 보이지 않는다. 따라서 raw language difference를 publication language 자체의 효과로 해석하지 않는다.
 

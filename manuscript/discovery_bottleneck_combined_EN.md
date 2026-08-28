@@ -93,10 +93,10 @@ Study 1 begins with Korean-language political science papers that have demonstra
 
 English-language citing papers are grouped into four source-paper cohorts.
 
-- C1 — 2009 or earlier;
-- C2 — 2010–2014;
-- C3 — 2015–2019; and
-- C4 — 2020–2024.
+- C1: 2009 or earlier;
+- C2: 2010–2014;
+- C3: 2015–2019; and
+- C4: 2020–2024.
 
 A target contributes only to cohorts in which citation was temporally possible. For target paper $j$ and cohort $c$,
 
@@ -156,7 +156,7 @@ The secondary access analysis does not provide an independent confirmation. Amon
 
 Study 1 supports a limited temporal association. Papers currently retrievable in Google Scholar differ in their historical English-language citation trajectories, with the visible–nonvisible gap expanding in C2 and C3 relative to the earliest cohort. The result survives a sample restriction that holds target composition constant across cohorts, but it does not continue in C4 and is less stable in alternative count models.
 
-The 0.405- and 0.696-point estimates are additional changes in the visible–nonvisible gap relative to C1, not citation-probability levels. The central pattern is therefore concentrated widening in C2 and C3, followed by no detectable additional widening in C4—not a uniformly accelerating advantage across all periods.
+The 0.405- and 0.696-point estimates are additional changes in the visible–nonvisible gap relative to C1, not citation-probability levels. The central pattern is therefore concentrated widening in C2 and C3, followed by no detectable additional widening in C4. It is not a uniformly accelerating advantage across all periods.
 
 The design cannot establish that Google Scholar visibility caused those citation differences. Current visibility may reflect later indexing, later web availability, or processes associated with earlier scholarly circulation. The appropriate conclusion is therefore that current exact-title visibility identifies papers whose English-language citation trajectories diverged during the period in which Google Scholar became widely used, not that historical indexing dates or causal effects have been recovered.
 
@@ -187,9 +187,9 @@ For each topic, the audit includes ten Korean-language papers selected using DBp
 
 The audit crosses three factors.
 
-- Query language — English / Korean;
-- Source instruction — general web / explicit instruction to search KCI, DBpia, or KISS;
-- System — OpenAI `gpt-5.6-sol` / Perplexity `sonar-pro`.
+- Query language: English / Korean;
+- Source instruction: general web / explicit instruction to search KCI, DBpia, or KISS;
+- System: OpenAI `gpt-5.6-sol` / Perplexity `sonar-pro`.
 
 Every prompt included the topic's three keywords and requested ten relevant scholarly publications in a fixed JSON schema. Search activity was capped at two searches per keyword and six searches per execution. Five topics × four prompt conditions × two systems × five independent repetitions yield 200 stateless executions. The audit produces 1,932 valid recommendation occurrences.
 
@@ -259,8 +259,8 @@ The occurrence-weighted hallucination rate is therefore 2.2%, distinct from the 
 | Accessible | 44.2% | 46.3% | 42.4% |
 | Access restricted | 44.5% | 47.9% | 41.6% |
 | Invalid or unverifiable | 11.3% | 5.8% | 16.0% |
-| — Broken link | 9.1% | 3.3% | 14.1% |
-| — Hallucinated item | 2.2% | 2.6% | 1.9% |
+| Broken link | 9.1% | 3.3% | 14.1% |
+| Hallucinated item | 2.2% | 2.6% | 1.9% |
 
 After controlling for prompt condition and system, recommended-item language is not independently associated with full access, access restriction, or invalid/unverifiable status. The raw language differences therefore describe the mix of outputs generated under the experiment rather than an effect of publication language.
 
@@ -338,7 +338,7 @@ Study 2 directly audits contemporary web-enabled generative search. Under the En
 
 The combined inference is deliberately limited. The studies do not show that a single discovery mechanism causes international citation inequality. They show that locally used Korean political science is unevenly represented at observable points in scholarly search, including bibliographic retrievability, final source selection, and provided-link access. Those distinctions matter for how international visibility is measured. A paper can exist without being retrieved; a recommendation list can look locally representative without recovering known local work; and a correct recommendation can still provide an unusable route to the text.
 
-For political science, this locates part of the international-visibility problem in the practical environments through which scholars now encounter literature—an established academic search engine and an emerging generative-search interface—without reducing the broader problem of disciplinary inequality to technology alone.
+For political science, this locates part of the international-visibility problem in two practical environments through which scholars now encounter literature, namely an established academic search engine and an emerging generative-search interface. It does so without reducing the broader problem of disciplinary inequality to technology alone.
 
 
 # 7. Limitations
