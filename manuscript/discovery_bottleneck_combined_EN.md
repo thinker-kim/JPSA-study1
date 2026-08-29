@@ -12,355 +12,352 @@ CJKmainfont: AppleMyungjo
 
 # Abstract
 
-Korean political science is produced and circulated across distinct KCI- and SSCI-centered scholarly spheres (Rhee 2026). This paper examines one dimension of that segmentation through visibility in scholarly search and full-text access.
+Research on Korean politics is produced and circulated in distinct Korean- and English-language scholarly spheres, and the scholarship accumulated in the two spheres is neither internationally visible nor cited to the same extent (Rhee 2026; Kim et al. 2025). This paper examines one dimension of this difference: **the visibility of publications in scholarly search environments**. Because researchers use search environments to construct the body of literature they review, the scholarly existence of a study must be distinguished from whether that study actually appears as a candidate in the search process. We analyze how research on Korean politics that has already been used or identified as important in the Korean-language sphere becomes visible in Google Scholar and generative search, while treating full-text access through links supplied by the search environment as a separate outcome.
 
-Study 1 analyzes 54,789 papers on Korean politics cited by Korean-language political science articles published in 2000–2025. Relative to the baseline period, the English-language citation-probability gap between papers that are and are not currently retrievable in Google Scholar was significantly larger by 0.405 percentage points in 2010–2014 and 0.696 points in 2015–2019, but did not widen further in 2020–2024. Full-text access through Google Scholar links was not significantly associated with English-language citation probability. These estimates describe an association between current retrievability and historical citation trajectories, not a causal effect of Google Scholar.
+**Study 1** analyzes 54,789 papers on Korean politics cited by Korean-language political science articles published from 2000 to 2025, examining the relationship between **Google Scholar index presence as of 2026** and English-language citation probability across periods. Compared with the baseline period through 2009, the English-language citation-probability gap between papers whose bibliographic records are currently confirmed in Google Scholar and those whose records are not was significantly larger by **0.405 percentage points (pp)** in 2010–2014 and **0.696 pp** in 2015–2019, but did not widen further in 2020–2024. Among papers with confirmed index presence, full-text access through links currently supplied by Google Scholar was not significantly associated with English-language citation probability. These results describe an association between current Google Scholar index presence and historical English-language citation trajectories, not a causal effect of Google Scholar.
 
-Study 2 audits two web-enabled generative search systems using 50 Korean-language and 50 English-language benchmark papers across five topics. Under the English-query, general-web baseline, no Korean benchmark paper was recovered in search or final recommendations, whereas English benchmark recovery was 3.4% and 3.2%, respectively. Combining a Korean query with an instruction to search Korean scholarly databases narrowed the Korean–English gap by 5.6 points at search and 6.4 points at recommendation, yet Korean benchmark recommendation recovery remained only 3.2%. Only 44.2% of all recommendations provided direct full-text access through the accompanying link, with no significant language difference.
+**Study 2** audits two web-enabled generative search systems using 50 preselected Korean-language and 50 English-language papers across five Korean-politics topics studied in both scholarly spheres. Under the English-query, general-web baseline, no Korean benchmark paper was recovered in either the observable search trace or the final recommendations, whereas English benchmark recovery was **3.4% and 3.2%**, respectively. Combining a Korean query with an instruction to search Korean scholarly databases narrowed the Korean–English gap by **5.6 pp** at search and **6.4 pp** at recommendation, yet Korean benchmark recovery in final recommendations remained only **3.2%**. Only **44.2%** of all recommendations provided direct full-text access through the accompanying link, and no significant language gap was found in access.
 
-Together, the studies show that the international visibility of Korean political science should be analyzed not only through publication and citation but also through the processes by which publications are retrieved and selected as final sources. Unlike the search and recommendation results, full-text access shows no corresponding language gap. The paper defines discovery bottleneck as the failure of a publication to enter the search candidate set or survive final source selection before substantive evaluation.
+Together, the studies show that the international visibility of Korean-politics research should be analyzed not only through publication and citation but also through **which publications actually appear as reviewable candidates in scholarly search and are selected as final sources**. In particular, a large number of Korean-language recommendations in generative search does not necessarily mean that the major scholarship accumulated in the Korean-language sphere is represented to a corresponding degree. We introduce **discovery bottleneck** as an operational concept for the loss of visibility at observable stages of search or final source selection before a publication receives substantive evaluation.
 
-Keywords: Korean political science; scholarly search; Google Scholar; generative search; non-English-language scholarship; international visibility; full-text access; discovery bottleneck
-
+**Keywords:** Korean political science; Korean-politics research; scholarly search; Google Scholar; generative search; non-English-language scholarship; international visibility; full-text access; discovery bottleneck
 
 # 1. Introduction
 
-International political science does not draw evenly on research from all countries, regions, and languages. Across more than a century of publications in eight major political science journals, research has historically concentrated on a limited number of North American and Western European countries, although geographical coverage has broadened over time (Wilson and Knutsen 2022). International publishing in the discipline also remains uneven by researchers' institutional and geographic location (Breuning et al. 2018). More broadly, major bibliographic databases disproportionately cover English-language journals, and non-English publications tend to receive fewer international citations than comparable English-language work (Mongeon and Paul-Hus 2016; Vera-Baceta, Thelwall, and Kousha 2019; Di Bitetti and Ferreras 2017).
+Which research enters scholarly discussion and receives citations in international political science is not determined by content alone. The countries and regions studied in leading political science journals have long been concentrated in North America and Western Europe, while international publishing also exhibits inequalities associated with researchers' geographic and institutional locations (Wilson and Knutsen 2022; Breuning et al. 2018). Language adds another divide. Major international scholarly databases disproportionately cover English-language journals, and publications in other languages tend to be disadvantaged in international citation relative to English-language work (Mongeon and Paul-Hus 2016; Vera-Baceta, Thelwall, and Kousha 2019; Di Bitetti and Ferreras 2017).
 
-Within Korean political science, research published in KCI and SSCI venues differs in topical and methodological patterns (Rhee 2026), while research on Korean politics published and circulated in English tends to achieve broader citation reach and international recognition than research produced in the Korean-language sphere (Kim et al. 2025).[^1]
+Research on Korean politics provides a case in which this linguistic and scholarly segmentation can be observed. Research circulating around KCI and SSCI in Korean political science exhibits different topical and methodological patterns (Rhee 2026), while Korean- and English-language research on Korean politics also forms distinct scholarly spheres in production, circulation, and international citation reach (Kim et al. 2025).[^1] The accumulation of a substantial body of Korean-language scholarship therefore does not by itself imply that it will be discovered and reviewed to the same degree in international scholarly environments.
 
-These patterns raise a specific question for Korean political science. A substantial Korean-language literature exists on topics that are also central to international research on Korea, including democratization, economic development, the Korean War, the North Korean nuclear issue, and the Korean Wave. Yet the existence and domestic use of a publication do not tell us whether it appears in the search environments used to identify scholarly literature.
+This paper analyzes that difference through **the visibility of publications in scholarly search environments**. Researchers construct the literature they review through search in order to understand prior work and position their research questions. A paper's existence as a publication, or its inclusion within the aggregate coverage of a database, is therefore not the same as the paper actually appearing for review in a particular search environment. The distinction in information-retrieval research between database-level coverage and document-level retrievability is relevant for precisely this reason (Azzopardi and Vinay 2008). We apply this distinction to the international visibility of Korean-politics research.
 
-This paper focuses on that search-mediated form of visibility. It does not compare the substantive quality of Korean- and English-language research, nor does it treat search as the only explanation for international citation inequality. Instead, it asks whether locally used Korean scholarship appears in two different scholarly discovery environments and whether the systems themselves provide a direct route to the paper's full text.
+**Study 1 analyzes the relationship between English-language citation over time and whether an individual paper's bibliographic record is currently indexed and retrievable in Google Scholar.** The analysis includes 54,789 Korean-politics publications cited at least once by Korean-language political science articles produced between 2000 and 2025. Every target paper therefore has a record of actual scholarly use in the Korean-language sphere. Within this common body of literature, we compare how the English-language citation-probability gap between papers with and without confirmed current Google Scholar index presence varies across periods. Because Google Scholar status is observed only in 2026, the analysis does not estimate whether historical Google Scholar indexing caused English-language citation.
 
-The first environment is Google Scholar, an established scholarly search tool. Google Scholar covers a broader range of document types and languages than selective citation indexes such as Web of Science and Scopus (Chen 2010; Martín-Martín et al. 2018b, 2021). It is also widely used in actual scholarly discovery. In the 2021 Ithaka S+R US Faculty Survey, 29% of faculty reported that they most often began a search for new scholarly literature in Google Scholar, including 36% of social science faculty (Blankstein 2022). Study 1 therefore examines a minimal paper-level condition, namely whether a known Korean-language paper can currently be recovered through an exact-title Google Scholar search. It separately measures whether Google Scholar supplies a link through which the full text can be opened.
+**Study 2 analyzes whether individual papers appear in generative-search processes and which of them are ultimately presented as sources.** Web-enabled generative search retrieves external material but does not return all retrieved items to the user; it selects some as citations or recommendations when constructing an answer (Liu, Zhang, and Liang 2023; He et al. 2025). Whether a pre-specified benchmark paper appears in the provider's disclosed search trace and whether it is included in the final recommendations are therefore distinct outcomes. Study 2 holds constant Korean-politics topics studied in both the Korean- and English-language spheres, varies query language and instructions to search Korean scholarly databases, and compares how major publications in the two languages appear at these two points.
 
-The second environment is web-enabled generative search. LLMs are increasingly being tested and used for literature search, although they are not yet as established as conventional academic search engines. A 2025 scoping review of LLM applications in systematic reviews found literature search to be the most frequently studied application, appearing in 15 of 37 included studies, while also concluding that fully established or validated applications remained limited (Lieberum et al. 2025). Recent academic-search systems explicitly combine retrieval with LLM-based selection and synthesis (Ajith et al. 2024; He et al. 2025; Asai et al. 2026). Study 2 therefore observes three user-facing stages where available, asking whether a pre-specified paper appears in an observable search trace, whether it is included in the final recommendation, and whether the URL supplied with that recommendation opens the full text.
+The analysis is not simply concerned with how many Korean-language publications are presented. **A high number of Korean-language publications and faithful representation of major scholarship accumulated in Korean political science are different outcomes.** Generative search may recommend many Korean-language papers while including few of the Korean studies designated as important before the search. Study 2 therefore distinguishes the Korean-language share of final recommendations from the extent to which pre-specified Korean benchmark papers are actually recovered in search and recommendation.
 
-The two studies answer different empirical questions. Study 1 uses a large longitudinal citation panel but observes Google Scholar status only in 2026. It therefore tests whether current retrievability marks papers with different historical English-language citation trajectories; it does not reconstruct historical Google Scholar indexing. Study 2 directly manipulates current search conditions but uses a smaller benchmark corpus and observes no later citation outcome. The studies should not be concatenated into a causal chain from Google Scholar to LLM recommendation to citation.
+**Full-text access is also analyzed separately from search visibility.** Even when a paper is indexed in Google Scholar or recommended by generative search, the supplied URL may lead to a paywall, an abstract page, or a broken link. Conversely, a publisher version may be paywalled while a repository or author-hosted copy remains available (Jamali and Nabavi 2015). We thus do not measure a paper's general **open-access (OA) status**; instead, we measure whether the link actually supplied by each search environment opens the full text without login or payment.
 
-Their common object is narrower. It is the paper-level visibility of Korean political science within systems used to identify scholarly literature. In this paper, discovery bottleneck refers to an observable search-mediated loss in which a locally used or pre-specified publication is absent from the retrievable or recommended set, or is presented without a usable full-text route supplied by the system. The term is introduced here as an operational label, not as an established theory of scholarly communication.
+The two studies do not constitute a single causal sequence from search to full-text access to citation. Study 1 analyzes the relationship between current Google Scholar index presence and historical English-language citation trajectories. Study 2 directly observes how major Korean- and English-language publications differ in current generative search and final source selection. Their designs and temporal scopes differ, but both ask **which studies among those that exist and are actually used in the Korean-language sphere appear as reviewable research in search environments used internationally**.
 
-The empirical results are similarly bounded. Study 1 finds that current exact-title Google Scholar retrievability is associated with a larger English-language citation gap in the 2010–2014 and 2015–2019 cohorts than in the earliest cohort, but not in 2020–2024. A secondary analysis of full-text access through current Google Scholar links is not statistically associated with cohort-specific citation incidence. Study 2 finds a Korean benchmark deficit under default English-language generative search, but also shows that prompts can radically change the language composition of recommendations without producing high recovery of the pre-specified Korean corpus. Finally, fewer than half of all recommendations provide immediate full-text access through the accompanying link.
+We use **discovery bottleneck** to refer to the loss of visibility in search and final source selection before a publication receives substantive evaluation. The concept does not claim that search technology is the single cause of international citation inequality. It is an operational label for an **observable omission** in which a publication fails to appear as a candidate in a particular search environment or appears in the search process but is excluded from the sources ultimately presented.
 
-These findings refine the problem of international visibility in political science. They do not establish that search infrastructure causes citation inequality. Rather, Study 1 shows that historical citation trajectories differ by current Google Scholar visibility, while Study 2 shows that the default Korean benchmark deficit is conditional on search design and that increased Korean-language representation does not imply high benchmark recovery. Full-text access does not reproduce the search and recommendation gaps. The contribution is therefore to distinguish paper-level visibility, final source selection, language representation, and provided-link access as empirically separate outcomes.
+This study makes three contributions. First, it extends the international visibility of Korean-politics research beyond publication and citation to the level of **whether individual papers are actually confirmed in scholarly search**. Second, within generative search, it distinguishes appearance in the search process from final source selection in order to identify where major Korean-language studies lose visibility. Third, by separating the retrieval and selection of publications from full-text access through the supplied links, it avoids reducing international visibility to a single outcome.
 
+# 2. Prior Research
 
-# 2. Literature and Argument
+## 2.1 International visibility in political science and linguistic scholarly spheres
 
-## 2.1 International visibility and scholarly discovery
+Internationally visible knowledge in political science has been unevenly constituted by research subject, researcher location, and publication language. The subjects covered in major political science journals have historically been concentrated in North America and Western Europe, a geographic imbalance that also bears on the scope over which descriptive and causal claims developed in particular regions are generalized to political science as a whole (Wilson and Knutsen 2022). On the producer side, scholars from the Global South are underrepresented in leading international political science journals, while researchers affiliated with certain institutions are overrepresented (Breuning et al. 2018). The international knowledge structure of political science therefore concerns not only what is studied but also **which research enters and circulates within central scholarly spaces**.
 
-Political science has long been concerned with the geographic scope of the knowledge on which the discipline builds. Research in leading journals has historically focused disproportionately on North America and Western Europe, with meaningful implications for the scope of descriptive and causal claims made in the field (Wilson and Knutsen 2022). Publication in leading political science outlets is also geographically unequal. Analyses of submissions and publications at the *American Political Science Review* show lower representation of scholars from the Global South and overrepresentation of scholars at prestigious institutions (Breuning et al. 2018).
+Publication language and bibliographic infrastructure form another axis of inequality. Web of Science and Scopus disproportionately cover English-language journals relative to the overall population of scholarly journals (Mongeon and Paul-Hus 2016; Vera-Baceta, Thelwall, and Kousha 2019). Even in multilingual publishing environments, non-English articles receive lower citation rates than English-language articles after other publication characteristics are taken into account (Di Bitetti and Ferreras 2017). The scholarly record observable internationally is thus not identical to the totality of research produced across languages, and database coverage and citation visibility may themselves be selectively structured by language.
 
-Language adds another dimension. Web of Science and Scopus overrepresent English-language journals relative to the broader population of scholarly journals (Mongeon and Paul-Hus 2016; Vera-Baceta, Thelwall, and Kousha 2019). Studies of multilingual publishing further find lower citation rates for articles published in languages other than English after accounting for publication characteristics (Di Bitetti and Ferreras 2017). These findings establish that the internationally visible scholarly record differs from the full set of research produced across languages and locations.
+This segmentation also appears in Korean-politics research. Korean political science published in KCI and SSCI venues differs in topical and methodological composition (Rhee 2026), while Korean- and English-language research on Korean politics displays different patterns of international recognition and citation reach (Kim et al. 2025). International visibility cannot therefore be reduced to citation differences between otherwise identical papers published in different languages. It also includes **the extent to which scholarship accumulated in the Korean-language sphere on the same political phenomena appears in international scholarly-information environments**.
 
-This paper examines one part of that difference at the point of literature search. Search systems do not merely measure scholarship after the fact; they are also used to identify candidate literature. Information-retrieval research distinguishes aggregate database coverage from retrievability, the extent to which an individual document can be returned through a retrieval system (Azzopardi and Vinay 2008). The distinction matters here because broad coverage of a language or field does not imply that every individual paper is equally retrievable.
+Existing research documents inequalities in publication, database coverage, and citation, but the process by which researchers actually discover literature constitutes a separate level of analysis. Because researchers use search to build a candidate body of prior work, the existence of a study or a database's aggregate coverage of a field must be distinguished from **whether an individual publication actually appears for review in the search process**.
 
-The two studies apply this question to two search environments. Study 1 examines an established academic search engine, Google Scholar. Study 2 examines web-enabled generative search, where retrieval is followed by an additional user-facing selection because the system generates an answer and presents only some sources as recommendations or citations.
+Information-retrieval research conceptualizes this difference as one between database-level **coverage** and document-level **retrievability** (Azzopardi and Vinay 2008). Here, the concept does not make retrievability itself the sole outcome. Rather, it supplies the conceptual basis for the proposition that **aggregate coverage cannot determine the search visibility of an individual publication**. Study 1 applies this distinction to whether the paper's bibliographic record is currently confirmed in Google Scholar—its **Google Scholar index presence**.
 
-A second distinction concerns access. Both Google Scholar and generative-search systems can provide links to the publications they surface. The relevant measure is whether the provided link opens the full text without payment or login. This is not equivalent to a paper's general open-access status. A paper may be freely available elsewhere even when the search environment provides a paywalled, abstract-only, or broken link.
+## 2.2 Google Scholar coverage, index presence, and full-text access
 
-## 2.2 Study 1: Google Scholar visibility and full-text access
+Google Scholar is an important environment in which to examine the international visibility of non-English scholarship. Comparisons with Web of Science and Scopus show that Google Scholar captures a wider range of publications and citations, including substantial numbers of non-English and non-journal materials (Chen 2010; Martín-Martín et al. 2018b, 2021). This broad coverage matters for non-English scholarship because research insufficiently captured in selective international citation indexes may nevertheless be found in Google Scholar.
 
-Google Scholar is relevant for non-English scholarship because it combines broad coverage with extensive real-world use. Cross-database studies find substantially wider coverage in Google Scholar than in Web of Science or Scopus, including many non-English and non-journal citing documents (Chen 2010; Martín-Martín et al. 2018b, 2021). At the same time, broad aggregate coverage is incomplete at the record level. Using 116,000 Crossref records as an external baseline, Delgado-Quirós et al. (2024) found that 9.8% of sampled publications were not returned by Google Scholar.
+However, broad coverage of a language or field does not guarantee that every individual paper's bibliographic record can actually be confirmed. Comparisons with external bibliographic records have also identified publications not returned by Google Scholar (Delgado-Quirós et al. 2024). **Aggregate Google Scholar coverage and paper-level index presence must therefore be distinguished analytically.**
 
-Google Scholar is also a major point of entry to scholarly literature. In the 2021 Ithaka S+R survey, 29% of US faculty most often began scholarly discovery in Google Scholar, and the figure was 36% among social scientists (Blankstein 2022). Earlier studies had already documented substantial use of Google and Google Scholar by researchers and graduate students (Jamali and Asadi 2010; Cothran 2011). These data do not imply that every citation results from Google Scholar use; they establish that Google Scholar is a substantively important search environment in which paper-level visibility can be observed.
+The distinction matters because Google Scholar is widely used for actual scholarly discovery. Studies repeatedly document the use of Google and Google Scholar by researchers and graduate students (Jamali and Asadi 2010; Cothran 2011), and a recent faculty survey identifies Google Scholar as one of the main starting points for social scientists searching for new scholarly literature (Blankstein 2022). Such use does not itself mean that index presence generates subsequent citations, but it clearly establishes index presence as an observable property within an environment where actual literature search takes place.
 
-Google Scholar also links users to available versions of papers. Jamali and Nabavi (2015) found that 61.1% of sampled articles were accessible in full text through Google Scholar. In a much larger sample of 2,269,022 Web of Science documents from 2009 and 2014, Martín-Martín et al. (2018a) found a freely available version displayed in Google Scholar for 54.6% of documents. Those versions came from publishers, repositories, and other web sources. These studies motivate a distinction between being retrievable in Google Scholar and being connected by Google Scholar to a usable full-text version.
+Research on Google Scholar's provision of full text points to a separate dimension. Google Scholar may link not only to a publisher site but also to versions identified in repositories and elsewhere on the web, and it provides links to free full text for a substantial share of the literature (Jamali and Nabavi 2015; Martín-Martín et al. 2018a). Yet confirming a bibliographic record in Google Scholar and receiving a usable full-text link from Google Scholar are not the same. An indexed paper may lead only to a paywall or abstract page, while a freely available web version may exist without being presented by Google Scholar.
 
-Prior research has mainly compared databases or estimated aggregate levels of coverage and online availability. Study 1 instead asks, within a single set of locally used Korean-language political science papers, whether current exact-title Google Scholar retrievability is associated with different histories of English-language citation. It also tests, among currently retrievable papers, whether full-text access through current Google Scholar links provides an additional association with citation incidence.
+Prior research thus indicates that **database coverage, paper-level index presence, and full-text access through the supplied link** are distinct properties. Study 1 applies this distinction to Korean-politics publications that have actually been used in Korean-language political science. Rather than re-estimating Google Scholar's overall coverage, it compares historical English-language citation patterns by current Google Scholar index presence within a common set of publications with Korean-language citation records.
 
-The temporal limitation is central. The study observes Google Scholar status in 2026, not in each historical citation cohort. Current status may reflect indexing or web availability that changed after some citations occurred. The analysis therefore concerns historical citation trajectories by current search status, not the causal effect of historical Google Scholar indexing or access.
+## 2.3 Generative scholarly search and publication selection
 
-## 2.3 Study 2: generative scholarly search, recommendation, and supplied access
+In generative search, retrieved materials are not all presented directly to the user. A web-enabled LLM searches external materials, selects some as citations or recommendations, and uses them to compose an answer. Research on generative search has therefore treated source inclusion in the final answer, whether citations support the associated claims, and whether supplied sources can be verified as distinct problems rather than examining retrieval alone (Liu, Zhang, and Liang 2023).
 
-Generative search changes the user-facing organization of scholarly discovery. A web-enabled LLM can retrieve external sources and then produce a synthesized answer that cites or recommends only a subset of what was searched. Research on generative search has therefore evaluated not only whether sources exist, but whether citations support generated claims and whether systems provide complete and verifiable sourcing (Liu, Zhang, and Liang 2023).
+Recent work applying LLMs to scholarly search increasingly evaluates **whether pre-specified publications are actually recovered**, rather than relying on the apparent plausibility of generated lists. LitSearch defines target papers independently of a system run and then evaluates retrieval performance (Ajith et al. 2024); academic-search agents such as PaSa likewise use query–paper benchmarks (He et al. 2025). This approach follows the information-retrieval tradition of evaluating search performance against a predefined relevant set (Manning, Raghavan, and Schütze 2008). A recent audit of LLM-based scholar recommendations similarly uses an external benchmark to measure whether pre-specified scholars or publications are actually recommended (Espín-Noboa and Méndez 2026). At the same time, although research on LLM-assisted literature search is rapidly expanding, its use in rigorous processes such as systematic reviews is not yet fully established (Lieberum et al. 2025; Asai et al. 2026).
 
-LLM-assisted scholarly search is also becoming an explicit research area. A 2025 scoping review of LLM use in systematic reviews identified literature search as the most frequent application among 37 included studies, while emphasizing that validated applications remain limited (Lieberum et al. 2025). Scientific-search benchmarks such as LitSearch define target papers independently of the tested system and evaluate whether retrieval methods recover those papers (Ajith et al. 2024). Agentic systems such as PaSa similarly use query–paper benchmarks to evaluate LLM-based academic search rather than treating a plausible-looking generated list as self-validating (He et al. 2025).
+This approach is particularly important when analyzing non-English scholarship. A generated list with many Korean-language papers demonstrates that **a large amount of Korean-language material was presented**, but does not by itself show that major scholarship accumulated in the Korean-language sphere was adequately represented. Depending on the search condition, a system may recommend many Korean-language publications yet include almost none of the particular studies treated as important in Korean political science. An analysis of Korean-language visibility in generative search must therefore distinguish the linguistic composition of final recommendations from **whether pre-identified major Korean-language studies are actually searched and selected**.
 
-This benchmark logic follows the standard information-retrieval practice of evaluating returned documents against an independently specified relevant set (Manning, Raghavan, and Schütze 2008). It is particularly important for multilingual search. A recommendation list can contain many Korean-language papers without recovering the particular Korean papers fixed before the audit. Language representation and benchmark recovery therefore answer different questions. Representation measures the composition of what the system chooses to show; recovery measures whether a pre-specified evaluation set appears.
+The sources ultimately selected by generative search are also not fixed. Prior research reports that generative-search results can differ with source authority, geography, and institutional or commercial source type (Liu, Zhang, and Liang 2023; Li and Sinnamon 2024). In Korean-politics research, where Korean- and English-language publications circulate through different databases and publishing channels, **query language and instructions about which scholarly information sources to search** may change both the literature retrieved and the sources ultimately presented.
 
-Study 2 further distinguishes observable search from final recommendation. A benchmark paper may appear in a provider-exposed search trace but not in the final list shown to the user. Even an accurately recommended paper may be paired with a URL that is paywalled, abstract-only, broken, or otherwise unusable. The audit therefore treats benchmark recovery in search, final recommendation recovery, and full-text access through the provided link as separate outcomes.
+Study 2 therefore distinguishes two points. First, it asks whether a benchmark paper appears in the provider's externally disclosed search trace. Second, it asks whether the paper is included in the final recommendations. Providers do not disclose their entire internal retrieval process, so the search trace cannot be equated with that full process. Nevertheless, separating the two outcomes permits a distinction between an item that never appears in the **observable search trace** and one that appears there but is not ultimately presented as a source.
 
-Existing generative-search audits have examined citation correctness, source authority, and geographic or commercial source bias (Liu, Zhang, and Liang 2023; Li and Sinnamon 2024). Recent work has also evaluated LLM-based scholar or paper recommendation with external benchmarks (Ajith et al. 2024; He et al. 2025; Espín-Noboa and Méndez 2026). Less is known about how query language and explicit instructions to search local scholarly databases affect recovery of a pre-specified non-English political science corpus. Study 2 addresses that question for Korean politics.
+Study 2 applies this distinction to Korean-politics topics studied in both scholarly spheres. By varying query language and explicit instructions to search Korean scholarly databases, it analyzes **the conditions under which major publications pre-identified in the Korean-language sphere actually appear in search traces and final recommendations**. Full-text access through the supplied link is measured as an outcome separate from search and source selection.
 
+# 3. Study 1: Google Scholar Index Presence and English-Language Citation
 
-# 3. Study 1: Google Scholar Visibility and English-Language Citation
+## 3.1 Data and variables
 
-## 3.1 Data and measures
+Study 1 analyzes **how the English-language citation-probability gap between Korean-politics publications with and without currently confirmed Google Scholar index presence varies over time, among publications already used in Korean-language political science**.
 
-Study 1 begins with Korean-language political science papers that have demonstrated local scholarly use. Every target paper was cited at least once by a Korean-language source paper. The final sample contains 54,789 unique target papers.
+The analysis includes 54,789 Korean-politics publications cited by Korean-language political science articles produced between 2000 and 2025. To enter the sample, a target must have been cited at least once in Korean-language political science during this period. The sample therefore contains both publications cited only in the Korean-language sphere and those cited in both the Korean- and English-language spheres.
 
-English-language citing papers are grouped into four source-paper cohorts.
+English-language citation is constructed as cohort-specific incidence rather than a single cumulative citation count.
 
-- C1: 2009 or earlier;
-- C2: 2010–2014;
-- C3: 2015–2019; and
-- C4: 2020–2024.
+* **C1:** through 2009
+* **C2:** 2010–2014
+* **C3:** 2015–2019
+* **C4:** 2020–2024
 
-A target contributes only to cohorts in which citation was temporally possible. For target paper $j$ and cohort $c$,
+C1 is the baseline against which later cohorts are compared; it does not represent a search environment predating Google Scholar. Equal five-year intervals are used from 2010 onward.
+
+A target paper is included only in cohorts in which it had a temporal opportunity to be cited. For target \(j\) and cohort \(c\),
 
 $$
 Y_{jc}=1
 $$
 
-if the target receives at least one citation from an English-language source paper in that cohort, and zero otherwise. The final panel contains 179,230 target-paper × cohort observations.
+if at least one English-language source paper cited the target during that period, and 0 otherwise. The final panel contains **179,230 target-paper × cohort observations**.
 
-The main exposure is current exact-title Google Scholar visibility, $D_j$. Searches use available Korean, English, and reference-title variants. A confirmed bibliographic match is coded $D_j=1$; a completed search with no confirmed match is coded $D_j=0$. The sample contains 19,436 retrievable papers and 35,353 nonretrievable papers.
+The main variable \(D_j\) indicates **Google Scholar index presence as of 2026**. We searched plausible Korean and English titles and reference-title variants. If a Google Scholar record satisfying predefined bibliographic matching criteria was confirmed, \(D_j=1\); if the search was completed without finding a verifiable matching record, \(D_j=0\). The sample includes 19,436 papers with \(D_j=1\) and 35,353 with \(D_j=0\).
 
-The term *retrievability* is intentionally narrow. Exact-title lookup is a known-item search. It does not measure whether an unfamiliar researcher would find the paper through a topical query or where the paper ranks for a broad political-science search. It measures whether the known paper can currently be recovered in Google Scholar when identifying title information is supplied.
+Because Google Scholar does not publish a complete list of its index, **index presence is operationalized as confirmation of a bibliographic record through this study's title-based search and matching procedure**. Thus, \(D_j=0\) does not mean that the paper is absolutely absent from every possible Google Scholar search. It means that current index presence could not be confirmed under our search procedure.
 
-A secondary measure captures full-text access through Google Scholar links among currently visible papers. It records whether the link supplied through Google Scholar opens the full text. This is conditional on current Google Scholar visibility and does not attempt to classify the paper's general OA status across the web.
+The secondary variable, measured for papers with confirmed current Google Scholar records, indicates **whether the link supplied by Google Scholar opens the full text without login or payment**. It does not measure the paper's general OA status.
 
 ## 3.2 Empirical strategy
 
-The principal specification is a target-paper fixed-effects linear probability model.
+The main analysis tests whether the English-language citation-probability gap by current Google Scholar index presence differs across citation cohorts. The target-paper fixed-effects linear probability model is
 
 $$
-Y_{jc}=\alpha_j+\lambda_c+\sum_{k=2}^{4}\beta_k
-\left(D_j\times 1[c=k]\right)+\gamma AgeBin_{jc}+\epsilon_{jc}.
+Y_{jc}=\alpha_j+\lambda_c+
+\sum_{k=2}^{4}\beta_k
+\left(D_j\times1[c=k]\right)
++\gamma AgeBin_{jc}+\epsilon_{jc}.
 $$
 
-Target fixed effects $\alpha_j$ absorb all time-invariant target-paper attributes, and cohort fixed effects $\lambda_c$ absorb common cohort shocks. Because $D_j$ is time-invariant, its main effect is absorbed by the target fixed effects. The interaction coefficients $\beta_k$ estimate how the visible–nonvisible citation-probability gap in each later cohort differs from the gap in C1. Standard errors are clustered by target paper.
+The target fixed effect α_j absorbs time-invariant target-paper attributes, while the cohort fixed effect λ_c absorbs changes in citation incidence common to all targets in a period. Because \(D_j\) does not vary within a paper, its main effect is absorbed by the target fixed effect.
 
-To address changing eligibility across cohorts, the analysis is repeated among papers published by 2004. Every target in this restricted sample predates Google Scholar and can contribute to all four citation cohorts. Robustness checks use Poisson pseudo-maximum likelihood, citation counts, and alternative journal-, topic-, and publication-year-by-cohort controls.
+The key coefficient β_k indicates **how much the English-language citation-probability gap between \(D=1\) and \(D=0\) papers in each later cohort differs from the gap in C1**. It is not a causal effect of Google Scholar indexing; it is the period-specific difference in the gap between groups defined by current index presence. Standard errors are clustered at the target-paper level.
+
+To assess changes in eligible-target composition across cohorts, we repeat the analysis **only for target papers published through 2004**. These papers had an opportunity to contribute to all four cohorts, reducing changes in cohort composition caused by the addition of later publications. This restriction does not reconstruct historical Google Scholar indexing status.
+
+Additional robustness analyses use Poisson pseudo-maximum likelihood, citation-count outcomes, and additional journal, topic, and publication-year interactions with cohort.
 
 ## 3.3 Results
 
-Currently retrievable papers have higher raw English-language citation incidence in every cohort.
+Papers with confirmed current Google Scholar index presence have higher raw English-language citation incidence than those without it in every cohort.
 
-| Cohort | $D=1$ | $D=0$ | Raw difference |
-|---|---:|---:|---:|
-| C1 | 0.68% | 0.31% | +0.37 pp |
-| C2 | 1.90% | 0.67% | +1.23 pp |
-| C3 | 3.01% | 1.25% | +1.76 pp |
-| C4 | 2.66% | 1.38% | +1.28 pp |
+| Cohort | \(D=1\) | \(D=0\) | Raw difference |
+| ------ | ------: | ------: | -------------: |
+| C1     |   0.68% |   0.31% |       +0.37 pp |
+| C2     |   1.90% |   0.67% |       +1.23 pp |
+| C3     |   3.01% |   1.25% |       +1.76 pp |
+| C4     |   2.66% |   1.38% |       +1.28 pp |
 
-The fixed-effects analysis asks whether that difference changes across cohorts. Relative to C1, the visible–nonvisible gap increases by 0.405 percentage points in C2 (95% CI [0.040, 0.770], $p=.030$) and 0.696 percentage points in C3 (95% CI [0.329, 1.063], $p<.001$). The C2 and C3 coefficients are jointly different from zero ($p<.001$). The C4 change is 0.008 percentage points (95% CI [−0.337, 0.353], $p=.965$), providing no evidence of a further increase in the latest cohort.
+In the fixed-effects analysis, the gap between the two groups **increases by 0.405 pp in C2** relative to C1 (95% CI [0.040, 0.770], \(p=.030\)). **In C3, it increases by 0.696 pp** (95% CI [0.329, 1.063], \(p<.001\)). The joint test of the C2 and C3 coefficients also yields \(p<.001\).
 
-The pre-2005 target sample produces the same bounded pattern.
+By contrast, the change in C4 is **0.008 pp** (95% CI [−0.337, 0.353], \(p=.965\)), providing no evidence that the gap widened further in 2020–2024 relative to C1.
 
-| Change in $D$ gap from C1 | Full eligible sample | Published by 2004 |
-|---|---:|---:|
-| C2 | +0.405 pp [0.040, 0.770] | +0.791 pp [0.227, 1.355] |
-| C3 | +0.696 pp [0.329, 1.063] | +0.496 pp [0.027, 0.964] |
-| C4 | +0.008 pp [−0.337, 0.353] | +0.273 pp [−0.175, 0.721] |
+Restricting the analysis to targets published through 2004 also yields positive gap changes in C2 and C3.
 
-In the pre-2005 sample, C2 is significant at $p=.006$, C3 at $p=.038$, and the joint C2–C3 test at $p=.011$; C4 remains uncertain ($p=.233$).
+| Change in \(D\) gap from C1 |       Full eligible sample |        Published through 2004 |
+| --------------------------- | -------------------------: | ----------------------------: |
+| C2                          | +0.405 pp [0.040, 0.770]   | +0.791 pp [0.227, 1.355]      |
+| C3                          | +0.696 pp [0.329, 1.063]   | +0.496 pp [0.027, 0.964]      |
+| C4                          | +0.008 pp [−0.337, 0.353]  | +0.273 pp [−0.175, 0.721]     |
 
-Robustness checks are less uniform. A target-fixed-effects Poisson model produces positive C2 and C3 changes but conditions on papers receiving at least one English-language citation because all-zero targets do not identify the conditional model. Other Poisson specifications are less precise; journal-by-cohort and publication-year-by-cohort models retain positive C2 estimates but do not reproduce statistically significant C3 or C4 interactions. The central finding should therefore remain tied to the incidence model and the pre-2005 restriction rather than generalized across all functional forms.
+In the pre-2005 sample, \(p=.006\) for C2 and \(p=.038\) for C3; the joint test for C2–C3 yields \(p=.011\). The C4 estimate is positive but statistically uncertain (\(p=.233\)).
 
-The secondary access analysis does not provide an independent confirmation. Among currently visible papers, full-text access through current Google Scholar links is not significantly associated with cohort-specific English-language citation incidence. Because the access variable is conditional on present Google Scholar visibility and is also measured only at the current observation point, the null result does not establish that access is generally irrelevant to scholarly use.
+The robustness results are not identical across all specifications. In target-fixed-effects Poisson models, the C2 and C3 changes are positive, but targets with no English-language citations do not identify the conditional model and are therefore excluded. Other Poisson specifications are less precise. In models with journal-by-cohort and publication-year-by-cohort controls, the positive C2 estimate remains, but C3 and C4 are not reproduced as statistically significant. The findings should therefore be interpreted **within the scope of the C2–C3 pattern found in the main incidence model and pre-2005 restriction**.
+
+Among papers with a confirmed current Google Scholar record, **full-text access through the link supplied by Google Scholar is not statistically significantly associated with cohort-specific English-language citation incidence**.
 
 ## 3.4 Interpretation
 
-Study 1 supports a limited temporal association. Papers currently retrievable in Google Scholar differ in their historical English-language citation trajectories, with the visible–nonvisible gap expanding in C2 and C3 relative to the earliest cohort. The result survives a sample restriction that holds target composition constant across cohorts, but it does not continue in C4 and is less stable in alternative count models.
+Study 1 shows that historical English-language citation patterns differ between papers grouped by current Google Scholar index presence. Relative to C1, the citation-probability gap between the two groups widens in C2 and C3, and the same directional result appears when the sample is restricted to pre-2005 targets that could contribute to all four cohorts. The gap does not widen further in C4, however, and some alternative specifications produce less precise results.
 
-The 0.405- and 0.696-point estimates are additional changes in the visible–nonvisible gap relative to C1, not citation-probability levels. The central pattern is therefore concentrated widening in C2 and C3, followed by no detectable additional widening in C4. It is not a uniformly accelerating advantage across all periods.
+The estimates of 0.405 pp and 0.696 pp do not represent citation probability itself. They indicate **how much the citation-probability gap between the two groups increased relative to C1**. The results should therefore not be interpreted as a continuously expanding advantage across all periods.
 
-The design cannot establish that Google Scholar visibility caused those citation differences. Current visibility may reflect later indexing, later web availability, or processes associated with earlier scholarly circulation. The appropriate conclusion is therefore that current exact-title visibility identifies papers whose English-language citation trajectories diverged during the period in which Google Scholar became widely used, not that historical indexing dates or causal effects have been recovered.
-
+Nor can we conclude that current index presence caused historical English-language citation. The existence of a current Google Scholar record may reflect subsequent indexing, web availability, prior scholarly circulation, or other characteristics that changed alongside these factors. The most limited interpretation is that **historical English-language citation trajectories differ by current Google Scholar index presence**.
 
 # 4. Study 2: Auditing Web-Enabled Generative Search
 
 ## 4.1 Benchmark and audit design
 
-Study 2 evaluates two pre-specified 50-paper corpora covering five topics in Korean politics.
+Study 2 analyzes **the extent to which major Korean- and English-language publications on the same Korean-politics topics are searched and presented as final sources in generative search, and whether the difference changes across search conditions**.
 
-1. the Korean War;
-2. South Korean economic development;
-3. South Korean democratization;
-4. the North Korean nuclear program; and
-5. the Korean Wave.
+The comparison set was fixed as a benchmark before the systems were run rather than defined after viewing the audit results. This makes it possible to distinguish the prevalence of publications in a particular language in the results from the actual search and recommendation of studies preselected as important within each scholarly sphere.
 
-Each topic was operationalized with three translation-equivalent Korean and English keywords. All three topic keywords were embedded in the prompt in the assigned query language so that the substantive scope remained comparable across language conditions.
+Benchmark topics were selected on the basis of Kim et al. (2025), which compares the research landscapes of Korean- and English-language political science on Korea. We chose five Korean-politics topics studied in both scholarly spheres and organized to cover major developments in modern Korean politics in broadly chronological order:
 
-| Topic | Korean keywords | English keywords |
-|---|---|---|
+1. Korean War
+2. South Korean economic development
+3. South Korean democratization
+4. North Korean nuclear issue
+5. Korean Wave
+
+Each topic was operationalized using three semantically corresponding Korean and English search terms.
+
+| Topic | Korean terms | English terms |
+| ----- | ------------ | ------------- |
 | Korean War | 한국전쟁; 한국전쟁 발발; 한국전쟁 기원 | Korean War; Outbreak of the Korean War; Origins of the Korean War |
 | South Korean economic development | 한국 경제발전; 한국 발전국가; 한국 수출주도 산업화 | South Korean Economic Development; Korean Developmental State; South Korean Export-Led Industrialization |
 | South Korean democratization | 한국 민주화; 한국 민주화운동; 한국 시민사회 | South Korean Democratization; South Korean Democracy Movement; South Korean Civil Society |
-| North Korean nuclear program | 북핵 문제; 북한 핵무기; 대북 확장억제 | North Korean Nuclear Program; North Korean Nuclear Weapons; Extended Deterrence against North Korea |
+| North Korean nuclear issue | 북핵 문제; 북한 핵무기; 대북 확장억제 | North Korean Nuclear Program; North Korean Nuclear Weapons; Extended Deterrence against North Korea |
 | Korean Wave | 한류; 케이팝; 한국 영화 | Korean Wave; K-pop; South Korean Cinema |
 
-For each topic, the audit includes ten Korean-language papers selected using DBpia and KISS and ten English-language papers selected using Web of Science and Google Scholar. Candidate pools were ranked by citation count, and the ten highest-ranked overlapping papers were selected for each topic. The resulting 100 papers were fixed before the LLM audit. They form an evaluation set, not an exhaustive definition of all relevant scholarship.
+Each topic contains ten Korean-language and ten English-language papers. Korean benchmark papers were drawn from DBpia and KISS, while English benchmark papers were drawn from Web of Science and Google Scholar. Candidate pools were ranked by citation counts, and the ten papers per topic ranked highly in both respective sources were selected. The final benchmark contains **50 Korean-language and 50 English-language papers, 100 in total**, and was fixed before the LLM audit. It is an evaluation set for comparisons across conditions, not a gold standard covering all relevant literature on each topic.
 
-The audit crosses three factors.
+The audit crosses three factors:
 
-- Query language: English / Korean;
-- Source instruction: general web / explicit instruction to search KCI, DBpia, or KISS;
-- System: OpenAI `gpt-5.6-sol` / Perplexity `sonar-pro`.
+* **Query language:** English / Korean
+* **Source instruction:** general web / explicit KCI, DBpia, and KISS instruction
+* **System:** OpenAI gpt-5.6-sol / Perplexity sonar-pro
 
-Every prompt included the topic's three keywords and requested ten relevant scholarly publications in a fixed JSON schema. Search activity was capped at two searches per keyword and six searches per execution. Five topics × four prompt conditions × two systems × five independent repetitions yield 200 stateless executions. The audit produces 1,932 valid recommendation occurrences.
+Every prompt included all three search terms for the topic and requested ten relevant scholarly publications in a fixed JSON format. Searches were limited to two per search term and six per execution. We conducted **200 stateless executions**: 5 topics × 4 prompt conditions × 2 systems × 5 independent repetitions. These produced **1,932 valid recommendation occurrences**.
 
-For benchmark paper $j$ in execution $i$.
+## 4.2 Measurement and analysis
 
-- TraceRecovery = 1 when the paper appears in the provider's observable search trace;
-- Recommendation = 1 when the paper appears in the final recommendation;
-- SuppliedLinkAccess = 1 when the benchmark paper is recommended and the provided URL opens the full text without payment or login.
+We distinguish three outcomes for benchmark paper \(j\) and execution \(i\):
 
-The benchmark panel contains 4,000 paper × execution observations, comprising 200 executions × 20 topic-relevant benchmark papers. `SuppliedLinkAccess` in this panel is a joint pipeline-survival outcome because the denominator remains all benchmark-paper × execution pairs.
+* **TraceRecovery:** whether the benchmark paper is confirmed in the search trace exposed externally by the provider
+* **Recommendation:** whether the benchmark paper is included in the final recommendations
+* **SuppliedLinkAccess:** whether the benchmark paper is recommended and the supplied URL opens the full text without login or payment
 
-The study separately measures Korean-language representation, defined as the Korean-language share of valid recommendations. This is not a recall measure. Recommendation language is resolved for all 1,932 recommendation occurrences. Search-trace language representation is not compared across systems because provider-level trace observability differs substantially.
+The first two variables answer different questions. **TraceRecovery** measures whether a benchmark **appears in the observable search trace**, while **Recommendation** measures whether that publication **is ultimately included among the sources presented to the user**. Because the trace is observed only to the extent disclosed by the provider, it does not represent the system's entire internal retrieval process.
 
-Finally, all 927 distinct supplied URLs or no-URL item keys are manually reviewed and classified as accessible full text, abstract only, paywalled, broken link, or hallucinated/unverifiable publication. This coding evaluates the supplied link, not whether another usable copy exists elsewhere.
+The benchmark panel contains **4,000 paper × execution observations**. Each of the 200 executions is matched to the ten Korean and ten English benchmark papers for the corresponding topic. The denominator for **SuppliedLinkAccess** is all benchmark-paper × execution pairs, so it is not the access rate conditional on recommendation. It captures cases in which search, recommendation, and access all succeed.
 
-## 4.2 Baseline recovery
+We use the English-query, general-web condition as the baseline, estimate the difference between Korean and English benchmark papers, and assess how query language and source instruction alter that difference. We also calculate a direct contrast between the combined condition and the baseline.
 
-Under the English-language general-web baseline, recovery is low for both corpora but lower for the Korean benchmark.
+Separately, we measure **the share of Korean-language publications among all recommendations**. This is distinct from benchmark recovery because Korean-language papers outside the benchmark also count toward the language share.
 
-| Stage | English benchmark | Korean corpus | Korean gap | 95% CI | $p$ |
-|---|---:|---:|---:|---:|---:|
+Finally, we reviewed **927 distinct supplied URLs or no-URL item keys**, classifying them as accessible full text, abstract only, paywalled, broken links, or hallucinated/unverifiable publications. This assessment concerns only the URL supplied by the system; it does not investigate whether a free copy exists elsewhere on the web.
+
+## 4.3 Results
+
+Under the English-query, general-web baseline, recovery was low for both benchmarks, with an additional deficit for Korean-language papers.
+
+| Stage | English benchmark | Korean benchmark | Korean–English gap | 95% CI | \(p\) |
+| ----- | ----------------: | ---------------: | -----------------: | -----: | ----: |
 | Observable search trace | 3.4% | 0.0% | −3.4 pp | [−6.46, −0.34] | .029 |
 | Final recommendation | 3.2% | 0.0% | −3.2 pp | [−5.77, −0.63] | .015 |
 | Accessible supplied link | 0.6% | 0.0% | −0.6 pp | [−1.76, 0.56] | .311 |
 
-The first two differences are statistically distinguishable from zero. The provided-link comparison is not, but this reflects a severe floor because almost no benchmark item from either language reaches the final access stage. Across all experimental conditions, none of the pre-specified Korean papers survives through an accessible provided link.
+The Korean–English differences in the search trace and final recommendations are statistically significant. The difference in full-text access through the supplied link is not significant, although benchmark papers rarely reach this final stage at all.
 
-The baseline therefore shows two things simultaneously. First, these systems are not high-recall bibliographic tools for either corpus. Second, within that low-recall environment, the Korean benchmark has an additional deficit under the default English general-web condition.
+A Korean-language query changes the Korean–English gap at the search-trace stage by **+3.8 pp** (95% CI [0.72, 6.88], \(p=.016\)), while the Korean-database instruction changes it by **+4.0 pp** (95% CI [0.73, 7.27], \(p=.017\)). At final recommendation, the database instruction changes the gap by **+3.2 pp** (95% CI [0.71, 5.69], \(p=.012\)). The Korean-query estimate is +2.6 pp in the same direction but has \(p=.068\).
 
-## 4.3 Effects of query language and Korean-database instruction
+A direct comparison of the combined condition with the baseline shows that the Korean–English gap changes by **+5.6 pp** in the search trace and **+6.4 pp** in final recommendation. Under the combined condition, Korean benchmark recovery is **2.2%** in the search trace and **3.2%** in the final recommendations. The direction of the relative gap reverses, but absolute recovery remains low.
 
-Both interventions narrow the Korean–English recovery gap at the observable search stage. A Korean query changes the gap by +3.8 percentage points (95% CI [0.72, 6.88], $p=.016$), and the Korean-database instruction changes it by +4.0 points (95% CI [0.73, 7.27], $p=.017$). At final recommendation, the database instruction changes the gap by +3.2 points (95% CI [0.71, 5.69], $p=.012$); the Korean-query estimate is +2.6 points and less precise ($p=.068$).
-
-The three-way interaction testing departure from additivity is not distinguishable from zero. The more interpretable full combined-condition contrast is larger. Applying both a Korean query and a Korean-database instruction changes the Korean–English gap relative to baseline by +5.6 points at discovery and +6.4 points at recommendation.
-
-Under the combined condition, 2.2% of Korean benchmark papers are recovered in observable traces and 3.2% are included in final recommendations, compared with zero English benchmark recovery in that condition. This is a reversal of the *relative* gap, not high absolute recovery. More than 96% of Korean benchmark-paper opportunities remain unrecovered in a given execution.
-
-## 4.4 Representation is not benchmark recovery
-
-Prompting changes the language composition of final recommendations much more than it changes benchmark recovery.
+Search conditions change the language composition of final recommendations much more than benchmark recovery.
 
 | Prompt condition | Korean-language share of recommendations |
-|---|---:|
+| ---------------- | ----------------------------------------: |
 | English + general web | 0.0% |
 | English + Korean DB instruction | 35.3% |
 | Korean + general web | 55.8% |
-| Korean + Korean DB instruction | 91.2% |
+| Korean + Korean DB instruction | **91.2%** |
 
-Among recommendations whose supplied links are accessible, the corresponding Korean-language shares are 0.0%, 26.6%, 57.5%, and 94.9%.
+A Korean-language query increases the Korean-language share of recommendations by **55.7 pp** (\(p<.001\)), while a Korean-database instruction increases it by **35.4 pp** (\(p<.001\)). Yet even under the combined condition, recommendation recovery for the preselected Korean benchmark is only **3.2%**.
 
-The regression estimates confirm these large compositional shifts. Korean queries increase the Korean-language recommendation share by 55.7 percentage points ($p<.001$), and Korean-database instructions increase it by 35.4 points ($p<.001$). Yet under the combined condition, recommendation recovery of the pre-specified Korean benchmark is only 3.2% per paper-execution opportunity.
+Thus, **recommending many Korean-language publications is not the same as including at high rates the particular studies that have been important in the Korean-language sphere**. This does not mean that Korean-language recommendations outside the benchmark are inappropriate; the two measures answer different questions.
 
-The distinction is therefore methodological as well as substantive. A locally oriented reading list is not evidence of high recovery of known local scholarship. The non-benchmark Korean recommendations may be relevant; the audit does not classify them as irrelevant. The point is that language representation and benchmark recovery measure different properties of the output.
+Outcomes for the links supplied with all **1,932 recommendation occurrences** are:
 
-## 4.5 What happens at the supplied link?
+* **854 (44.2%)**: full text accessible
+* **859 (44.5%)**: access restricted
 
-Across all 1,932 recommendation occurrences.
+  * 247 abstract only
+  * 612 paywalled
+* **219 (11.3%)**: invalid or unverifiable
 
-- 854 (44.2%) provide accessible full text;
-- 859 (44.5%) are access-restricted, including 247 abstract-only and 612 paywalled links;
-- 219 (11.3%) are invalid or unverifiable, including 176 broken links and 43 coded hallucinated publications.
+  * 176 broken links
+  * 43 coded hallucinated publications
 
-The occurrence-weighted hallucination rate is therefore 2.2%, distinct from the 9.1% broken-link rate.
-
-| Supplied-link outcome | Overall | Korean-language item | English-language item |
-|---|---:|---:|---:|
+| Outcome of supplied link | Overall | Korean papers | English papers |
+| ------------------------ | ------: | ------------: | -------------: |
 | Accessible | 44.2% | 46.3% | 42.4% |
 | Access restricted | 44.5% | 47.9% | 41.6% |
 | Invalid or unverifiable | 11.3% | 5.8% | 16.0% |
 | Broken link | 9.1% | 3.3% | 14.1% |
 | Hallucinated item | 2.2% | 2.6% | 1.9% |
 
-After controlling for prompt condition and system, recommended-item language is not independently associated with full access, access restriction, or invalid/unverifiable status. The raw language differences therefore describe the mix of outputs generated under the experiment rather than an effect of publication language.
+After controlling for prompt condition and system, recommended-item language is not significantly associated with full access, access restriction, or invalid/unverifiable outcomes independently. The raw differences in the table should therefore not be interpreted as effects of publication language itself.
 
-System differences are secondary but visible. Conditional on recommended-item language and prompt factors, Perplexity is estimated to be 8.2 percentage points more likely than OpenAI to provide an accessible link ($p=.065$), 15.3 points less likely to provide an access-restricted link ($p<.001$), and 7.2 points more likely to produce an invalid or unverifiable result ($p=.017$). Its coded hallucination probability is 4.0 points higher ($p=.017$), but 39 of Perplexity's 40 hallucination occurrences come from a single English-query/Korean-database cell, so this sparse result should not be generalized beyond the audit.
+## 4.4 Interpretation
 
-## 4.6 Interpretation
+In Study 2, the Korean benchmark deficit under the English general-web baseline appears **in both the search trace and the final recommendations**. Korean-language queries and Korean-database instructions narrow or reverse this relative difference, but absolute Korean benchmark recovery remains low.
 
-Study 2 locates a default Korean benchmark deficit at the observable search and recommendation stages. Query-language and database instructions can narrow or reverse the relative gap, but they do not produce high absolute recovery. The same interventions are far more effective at changing the language composition of the list.
+In the combined condition, 91.2% of final recommendations are Korean-language publications, while recommendation recovery for the pre-specified Korean benchmark is only 3.2%. A result set that appears linguistically Korean-centered therefore does not establish that major research in the Korean-language sphere has been adequately included.
 
-Under the combined condition, the relative gap reverses, yet Korean benchmark recovery remains only 2.2% in search and 3.2% in final recommendations. Relative improvement and a substantial absolute discovery bottleneck therefore coexist. Because search traces include only what each provider exposes, trace recovery should not be interpreted as complete observation of internal retrieval.
+Separating the search trace from final recommendation also makes it possible to distinguish some forms of omission. A benchmark paper absent from the disclosed search trace has a different observable outcome from one that appears in the trace but is not included in the final recommendations. Because providers do not disclose their entire internal retrieval process, however, this should not be interpreted as a complete observation of the internal retrieval mechanism.
 
-The link audit identifies a separate downstream limitation because fewer than half of recommendations provide immediate full-text access through the URL the system itself supplies. This result concerns the user pathway created by the system, not the publication's availability elsewhere on the web.
-
+Full-text access through supplied links is another issue. Fewer than half of all recommendations led directly to the full text, but this outcome did not exhibit the same statistically significant Korean–English difference found in search and recommendation.
 
 # 5. Discussion
 
-## 5.1 What the two studies jointly show
+## 5.1 Synthesis of the main findings
 
-The two studies converge on one limited point. Local scholarly use does not guarantee equivalent visibility in the search environments examined here. Study 1 begins with Korean-language papers already cited in Korean scholarship. Study 2 begins with Korean papers fixed before the audit from Korean scholarly databases. In both cases, the analysis asks what happens when these papers meet a search system used to identify literature.
+The common finding across the two studies is that **research that exists and is actually used in the Korean-language sphere does not automatically become equally visible in other search environments**. The form in which visibility is observed and the temporal character of the evidence nevertheless differ across the studies.
 
-The evidence differs by study. In Google Scholar, current exact-title retrievability partitions a large corpus of locally cited papers into groups with different historical English-language citation trajectories. The gap expands in 2010–2014 and 2015–2019 relative to the earliest cohort, but not in 2020–2024. In generative search, the default English general-web condition produces a directly observed Korean benchmark deficit in contemporary retrieval and recommendation, although overall recovery is low for English papers as well.
+Study 1 begins with publications already cited in Korean-language political science. Among them, the English-language citation-probability gap between papers with and without confirmed Google Scholar index presence as of 2026 varies across periods. The gap is larger in 2010–2014 and 2015–2019 than in the baseline period, but does not widen further in 2020–2024. This is an association between current Google Scholar index presence and historical citation trajectories; it does not directly reveal the historical search environment.
 
-As Figure 1 shows, Study 1's widening is concentrated in C2 and C3 and is absent in C4. In Study 2, the baseline Korean deficit reverses under the combined search condition, but absolute recovery remains low; even when Korean-language publications constitute 91.2% of recommendations, Korean benchmark recommendation recovery is only 3.2%.
+Study 2 directly observes current generative search. Under the English general-web baseline, Korean benchmark papers appear less often than English benchmark papers in both the disclosed search trace and final recommendations, and the difference changes with Korean-language queries and instructions to search Korean scholarly databases. The extent to which major Korean-language publications appear in generative search can therefore vary with search conditions.
 
-![Study 1 Google Scholar visibility and Study 2 generative-search results](combined_analysis/figures/discovery_bottleneck_combined_simple.png){width=100%}
+The two studies cannot be combined as a single causal mechanism. Study 1 demonstrates the relationship between current Google Scholar index presence and past English-language citation patterns, while Study 2 directly compares retrieval and final source selection under current generative-search conditions. Their more limited joint implication is that **the process by which scholarly publications appear as reviewable studies in search environments is itself a distinct object of analysis in international visibility**.
 
-Together, these results support a search-mediated visibility interpretation without requiring a single causal mechanism. Search environments can place the same broad category of local scholarship into different observable states. Papers may be retrievable or not; recovered in a trace or not; selected for the final answer or not; linked to accessible full text or not.
+Study 2 particularly demonstrates that the linguistic composition of a final list and the actual representation of major scholarship from the Korean-language sphere can diverge. In the combined condition, 91.2% of recommendations are Korean-language publications, yet recommendation recovery for the pre-specified Korean benchmark is 3.2%. **Seeing a large amount of Korean-language material and adequately including major scholarship accumulated in Korean are therefore different claims**.
 
-## 5.2 Established and emerging discovery environments
+Full-text access is also not the same outcome as search and recommendation. In Study 1, full-text links currently supplied by Google Scholar have no statistically significant additional relationship with English-language citation incidence. In Study 2, fewer than half of all recommendations lead to full text through the supplied link, but no significant Korean–English difference is found. Whether a publication is found in search, presented as a final source, readable through the supplied link, and later cited must therefore be interpreted as distinct outcomes.
 
-The distinction between the two search environments is important. Google Scholar is an established scholarly search tool with documented use among social scientists (Blankstein 2022). Study 1 can therefore relate current paper-level visibility to historical citation trajectories during the period of Google Scholar's diffusion, although it cannot reconstruct historical index status.
+## 5.2 Implications for political science and future research
 
-Web-enabled LLM search is newer. Existing research shows growing experimentation with LLMs for literature search but also limited validation (Lieberum et al. 2025). Study 2 consequently makes a different claim. It directly audits current behavior under controlled search conditions. It does not infer that LLMs already dominate political-science literature search or that present recommendations have produced later citation outcomes.
+The political-science implication is not that search technology alone determines international knowledge inequality. Existing research already shows that the subjects, publishing, database coverage, and international citations of political science are unevenly constituted by region and language (Breuning et al. 2018; Wilson and Knutsen 2022; Mongeon and Paul-Hus 2016). In Korean-politics research, the Korean- and English-language spheres also differ in topics, methodology, and international recognition (Rhee 2026; Kim et al. 2025).
 
-This difference prevents a misleading historical narrative. The C4 result in Study 1 should not be interpreted as evidence about generative search. The 2020–2024 cohort contains limited post-LLM time and substantial citation lag. Study 2, rather than C4, provides the direct evidence about current generative-search behavior.
+This study adds that **differences in visibility can also be observed in the search processes researchers use to identify prior literature**. A paper actually cited in the Korean-language sphere is not necessarily confirmed in current Google Scholar, and even when generative search presents many Korean-language papers, it does not necessarily include the particular studies treated as important in Korean-language scholarship to the same degree.
 
-## 5.3 Retrieval, representation, and access are different outcomes
+Search environments do not determine the scholarly value of publications themselves, but they intervene in the process that structures which publications researchers may review. When relevant work does not appear in search results, a researcher may be unable to consider it before evaluating its content or value. In this sense, discovery bottleneck is **a problem of visibility that occurs before the evaluation of scholarly quality**.
 
-The combined analysis also clarifies three concepts that are often collapsed.
+The issue is particularly important where substantial local-language and English-language literatures coexist on the same political phenomena. If international knowledge of Korean politics is inferred solely from English-language journals, international citation indexes, or reading lists produced by generative search, the difference between the scholarly record accumulated in Korean and the subset that actually appears in a given search environment may be missed.
 
-First, retrieval is not representation. Study 2 shows this most clearly. A prompt condition can produce 91.2% Korean-language recommendations while recovering only 3.2% of pre-specified Korean benchmark opportunities. A linguistically localized output does not establish that known local scholarship has been recovered.
+Studies 1 and 2 constrain and observe this difference in distinct ways. Study 1 begins with the common condition of actual citation in Korean-language scholarship and compares current retrievability and English-language citation patterns within that set. Study 2 holds substantive topics studied in both language spheres constant and compares whether major publications preselected from each sphere appear in the search trace and final recommendations.
 
-Second, retrieval or recommendation is not the same as access through the provided link. Google Scholar can retrieve a paper without providing an open full-text link; a generative-search system can recommend the correct paper but link only to an abstract, a paywall, or a broken page. This paper therefore evaluates the route provided in the search result rather than treating general OA status as equivalent to user-facing access.
+The paper's concept of **discovery bottleneck** does not refer to a single internal algorithmic cause. In Study 1, it concerns failure to confirm a Google Scholar bibliographic record under the study's search protocol. In Study 2, it concerns failure to confirm a benchmark paper in the observable search trace or to include it in the final recommendations. It labels the condition in which a publication loses visibility in an observable search or selection process before substantive evaluation.
 
-Third, the two studies do not show the same relationship between access and the main outcome. In Study 1, present full-text access through Google Scholar links does not independently track cohort-specific English citation incidence among visible papers. In Study 2, access is not a later citation outcome at all; it is a directly observed property of the recommendation pathway. The combined paper therefore does not claim a general access-to-citation effect.
-
-## 5.4 Implications for political science
-
-The political-science implication is narrower than a claim that search technology determines disciplinary knowledge. Existing work already documents geographic and institutional concentration in political science publishing and research coverage (Breuning et al. 2018; Wilson and Knutsen 2022). The present studies identify an additional empirical location where unequal visibility can be observed in the systems through which literature is searched and presented.
-
-Search environments do not determine scholarly value, but they help structure which publications enter the candidate set for evaluation. The political-science significance of discovery bottlenecks therefore lies not in the language composition of an output alone, but in whether concrete publications accumulated in a local scholarly sphere become available for substantive consideration.
-
-For research on a country such as South Korea, this matters because a substantial part of the relevant scholarly record is produced in Korean and circulates through Korean journals and databases. If evaluation of international visibility considers only what appears in major English-language outlets or in a generated reading list, it can miss the distinction between the local literature that exists and the subset that a particular search environment returns.
-
-The Study 2 representation result is especially important for evaluating AI-mediated political knowledge. A response can appear highly localized because most of its references are Korean-language, while still recovering very little of a pre-specified Korean benchmark. Audits of multilingual scholarly search should therefore report recovery against an external local-language benchmark rather than only the language composition of the answer.
-
-## 5.5 Practical and research implications
-
-The empirical results do not test specific infrastructure reforms, so policy implications should remain modest. Two evaluation practices follow directly from the measurement results.
-
-First, scholarly search systems should be assessed against pre-specified local-language corpora when claims concern multilingual or regional coverage. Output composition alone is not sufficient to measure recovery.
-
-Second, evaluations should distinguish bibliographic retrieval from the usability of the supplied link. A correct citation paired with an inaccessible or broken URL creates a different user pathway from a correct citation paired with immediate full text.
-
-Future work can extend both dimensions longitudinally. Repeated Google Scholar observations could identify actual changes in paper-level visibility and supplied links, while repeated LLM audits could determine whether retrieval patterns persist as models, search indexes, and provider interfaces change.
-
+Future research should observe these conditions directly over time. Repeated measurement of the same publications' Google Scholar index presence and supplied links could document indexing changes that Study 1 cannot observe. Reapplying the same benchmark and search conditions in generative search could show how the visibility of particular Korean-language studies changes as models and search environments evolve.
 
 # 6. Conclusion
 
-This paper examines international visibility of Korean political science in two scholarly search environments rather than treating publication language or citation counts as the entire process.
+The international visibility of Korean-politics research is not fully captured by which studies are published and ultimately cited. In the actual process of identifying prior literature, there is an additional question: **which publications exist in a search environment, appear in search results, and are ultimately presented as sources for review**.
 
-Study 1 shows that among 54,789 Korean-language papers already used in Korean scholarship, current exact-title Google Scholar visibility is associated with different historical English-language citation trajectories. Relative to 2009 or earlier, the visible–nonvisible citation gap increases in 2010–2014 and 2015–2019, including among papers published before Google Scholar, but does not expand further in 2020–2024. The evidence is not fully stable across count specifications, and present full-text access through Google Scholar links does not independently reproduce the citation pattern. The result is therefore an association between current retrievability and historical citation trajectories, not a causal estimate of Google Scholar indexing or access.
+Study 1 compares current Google Scholar index presence and historical English-language citation patterns for 54,789 Korean-politics publications cited by Korean-language political science articles produced from 2000 to 2025. The English-language citation-probability gap between papers with and without confirmed current Google Scholar records is significantly larger in 2010–2014 and 2015–2019 than in the baseline period, but does not widen further in 2020–2024. Full-text links currently supplied by Google Scholar have no separate statistically significant relationship with English-language citation incidence. The result is a limited association between current index presence and historical citation trajectories, not a historical causal effect of Google Scholar.
 
-Study 2 directly audits contemporary web-enabled generative search. Under the English general-web baseline, the Korean benchmark is absent from both observable search traces and final recommendations, while English benchmark recovery is low but nonzero. Korean queries and explicit Korean-database instructions narrow the relative recovery gap, yet absolute recovery remains very low. These interventions change representation much more strongly. The combined condition produces 91.2% Korean-language recommendations while recovering only 3.2% of Korean benchmark opportunities. Among all recommendations, only 44.2% of provided links open full text directly; 44.5% are access-restricted and 11.3% are broken or unverifiable.
+Study 2 uses pre-specified Korean- and English-language benchmarks on Korean-politics topics studied in both language spheres to audit current generative search. Under the English general-web baseline, Korean benchmark papers are recovered significantly less often than English benchmark papers in the search trace and final recommendations. Korean-language queries and Korean-database instructions narrow the relative gap, but absolute Korean benchmark recovery remains low. In particular, even when 91.2% of recommendations in the combined condition are Korean-language publications, recommendation recovery for the pre-specified Korean benchmark is only 3.2%. **A large number of Korean-language recommendations is therefore not the same as adequate representation of major research from the Korean-language sphere.**
 
-The combined inference is deliberately limited. The studies do not show that a single discovery mechanism causes international citation inequality. They show that locally used Korean political science is unevenly represented at observable points in scholarly search, including bibliographic retrievability, final source selection, and provided-link access. Those distinctions matter for how international visibility is measured. A paper can exist without being retrieved; a recommendation list can look locally representative without recovering known local work; and a correct recommendation can still provide an unusable route to the text.
+Neither study identifies a significant language gap in supplied-link access corresponding to the differences found in search and recommendation. This result shows why publication retrieval, final source selection, full-text access, and later scholarly use should not be treated as a single outcome.
 
-For political science, this locates part of the international-visibility problem in two practical environments through which scholars now encounter literature, namely an established academic search engine and an emerging generative-search interface. It does so without reducing the broader problem of disciplinary inequality to technology alone.
-
+In this paper, **discovery bottleneck** refers to a phenomenon in which a publication loses visibility in a particular search environment before reaching substantive evaluation, even though it exists and has already been used in one scholarly sphere. This is not a claim that search technology alone produces international knowledge inequality. Rather, for a field such as Korean politics, where parallel bodies of Korean- and English-language scholarship exist, the argument is that **we must analyze not only what research is produced and cited but also which particular studies actually appear as reviewable publications in the search process**.
 
 # 7. Limitations
 
-Study 1 has a fundamental temporal limitation. Google Scholar retrievability and full-text access through its links are observed in 2026. The analysis does not observe the year in which each paper entered Google Scholar or when a full-text link first became available. Current visibility may also be endogenous to prior circulation. Papers with greater scholarly use may subsequently become easier to index or find. Target fixed effects remove stable paper differences but do not establish temporal precedence.
+The most important limitation of Study 1 is that Google Scholar index presence is observed only in 2026. We do not know when each target first entered Google Scholar, when it became retrievable, or what full-text links were supplied at earlier times. Current Google Scholar status therefore cannot be equated with the historical search environment.
 
-The Google Scholar measure is also subject to bibliographic matching error. Searches used Korean and English titles and reference-title variants, but misspelled metadata, title variation, duplicate records, or incomplete indexing could still produce false negatives or incorrect matches. The indicator therefore records current visibility under this study's search and matching protocol, not complete Google Scholar coverage.
+Current index presence may itself be a result of prior scholarly circulation. Widely cited or more visible publications may subsequently have become more likely to be confirmed in Google Scholar. Target fixed effects control for time-invariant paper characteristics but cannot eliminate this temporal ordering or time-varying processes.
 
-Study 1 is also model-dependent. The main incidence model and the pre-2005 restriction show C2–C3 divergence, but several Poisson specifications are less precise. The result should therefore not be described as invariant across outcomes or functional forms. The current full-text access analysis is additionally conditional on Google Scholar visibility and yields no statistically significant association with cohort-specific citation incidence.
+The measurement of Google Scholar index presence may also contain bibliographic matching error. Although we used Korean and English titles and reference-title variants, metadata errors, title variation, duplicate records, or incomplete indexing may have caused us to miss an existing record or match one incorrectly. Because Google Scholar does not publish a complete index list, \(D=0\) means **that index presence was not confirmed under this study's search and matching protocol**, not absolute absence from Google Scholar.
 
-Study 2 covers two systems, five topics, one collection period, and 100 pre-specified papers. Its benchmark is an evaluation set, not an exhaustive definition of relevant literature. Recovery events are sparse, especially at the accessible-link stage. Provider-level trace observability differs, so language representation in observable search traces cannot be compared symmetrically across systems.
+The strength of the Study 1 result also varies across specifications. The main incidence model and pre-2005 restriction show widening gaps in C2 and C3, but some Poisson and additional-control specifications are more uncertain. We therefore cannot generalize that the same pattern appears across all outcomes and functional forms.
 
-Benchmark construction also favors papers that rank highly by citation count and overlap across two bibliographic sources. This creates a stable evaluation set of comparatively visible publications, but may underrepresent recent, low-cited, or specialized work. The reported recovery rates are therefore recall against the pre-specified benchmark, not recall for Korean political science as a whole.
+Study 2 is limited to two systems, five Korean-politics topics, one collection period, and 100 pre-specified benchmark papers. The five topics were selected to compare areas studied in both language spheres, but they are not a probability sample representative of all Korean-politics research. The benchmark also does not cover all relevant literature on each topic.
 
-The Study 2 link audit evaluates the URL supplied by the system. An abstract-only, paywalled, or broken link does not establish that the paper is unavailable elsewhere. Hallucination events are also sparse and unevenly distributed across experimental cells, limiting generalization of system-level differences.
+Reliance on citation counts and publications commonly ranked highly across two sources also limits the benchmark. The procedure produces a stable evaluation set of relatively established scholarship in each language sphere, but may underrepresent recent, low-citation, or specialized subtopic research.
 
-Finally, neither study observes what researchers do after encountering a paper. Reading, substantive relevance, perceived quality, language competence, citation norms, collaboration networks, and publication venue can all influence later use and citation. The evidence concerns search-mediated visibility and access, not the full process by which political-science knowledge travels internationally.
+Generative-search environments change continuously. The underlying model, search index, ranking procedure, or provider interface may change under the same model name, so Study 2 measures behavior at the time of data collection.
 
+The search traces externally disclosed by providers do not reveal the full internal retrieval process. Failure to find a benchmark paper in the trace therefore does not establish that the system never considered it internally. Trace observability also differs across providers, so we do not compare the linguistic composition of search traces symmetrically across systems.
 
-[^1]: An earlier version of Kim et al. (2025) was presented at the 28th IPSA World Congress of Political Science (Seoul, July 12–16, 2025). The revised manuscript is under review at *Humanities and Social Sciences Communications* following a revise-and-resubmit decision.
+Full-text access is especially sparse at the benchmark level. Search and recommendation are themselves uncommon, creating a floor at the access stage. The absence of a significant Korean–English access gap should therefore not be interpreted as affirmative evidence that publications in the two languages are equally accessible.
+
+The link audit evaluates only the URLs actually supplied by the systems. A paper classified as paywalled, abstract only, or associated with a broken link may still be available elsewhere online. Hallucination events are also few and concentrated in particular experimental cells, limiting generalization to the system level.
+
+Finally, neither study observes what researchers do after a publication is retrieved or recommended. Clicking search results, reading full text, evaluating substantive relevance, language proficiency, perceived quality, citation norms, collaboration networks, and publication venues may all shape later use and citation. The evidence is therefore limited to **which publications become visible and are presented in search environments, and whether their full text can be accessed through supplied links**, rather than the entire process of knowledge circulation.
+
+[^1]: An early version of Kim et al. (2025) was presented at the 28th IPSA World Congress of Political Science in Seoul, July 12–16, 2025. A revised manuscript is currently under re-review following a revise-and-resubmit decision at *Humanities and Social Sciences Communications*.
 
 # References
+
 
 Ajith, Anirudh, Mengzhou Xia, Alexis Chevalier, Tanya Goyal, Danqi Chen, and Tianyu Gao. 2024. “LitSearch: A Retrieval Benchmark for Scientific Literature Search.” In *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing*, 15068–15083. https://doi.org/10.18653/v1/2024.emnlp-main.840.
 
